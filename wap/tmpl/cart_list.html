@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>购物车列表</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" type="text/css" href="../css/reset.css">
+    <link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/main.css">
+    <link rel="stylesheet" type="text/css" href="../css/child.css">
+    <script type="text/javascript" src="../js/zepto.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.min.js"></script>
+<script type="text/javascript" src="../js/config.js"></script>
+</head>
+<body>
+    <header id="header"></header>
+        <div class="cart-list-wp">
+            <div id="cart-list-wp"></div>
+            <script type="text/html" id="cart-list">
+            <% if(cart_list.length >0){%>
+                <ul class="cart-list">
+                    <% for (var i = 0;i<cart_list.length;i++){%>
+                        <li class="cart-list-item">
+                            <div class="cart-shop-name">
+                                店铺名称：<%=cart_list[i].store_name%>
+                            </div>
+                            <div class="cart-litem-wp clearfix">
+                                <a class="cart-litemw-imgwp" href="<%=WapSiteUrl%>/tmpl/product_detail.html?goods_id=<%=cart_list[i].goods_id%>">
+                                    <img src="<%=cart_list[i].goods_image_url%>"/>
+                                </a>
+                                <div class="cart-litemw-cnt" cart_id="<%=cart_list[i].cart_id%>">
+                                    <a class="cart-litemwc-pdname" href="<%=WapSiteUrl%>/tmpl/product_detail.html?goods_id=<%=cart_list[i].goods_id%>">
+                                        <%=cart_list[i].goods_name%>
+                                    </a>
+                                    <p class="mt5">
+                                        商品单价：￥<%=cart_list[i].goods_price%>
+                                    </p>
+                                     <p class="mt5">
+                                        商品总价：￥<span class="goods-total-price"><%=cart_list[i].goods_sum%></span>
+                                    </p>
+                                    <p class="cart-litemwc-pdcount clearfix mt5">
+                                        <span class="minus-wp fleft">
+                                            <span class="i-minus"></span>
+                                        </span>
+                                        <input type="text" class="buy-num buynum fleft" value="<%=cart_list[i].goods_num%>"/>
+                                        <span class="add-wp fleft">
+                                            <span class="i-add"></span>
+                                        </span>
+                                    </p>
+                                </div>
+                            </div>
+                            <span class="cart-list-del" cart_id="<%=cart_list[i].cart_id%>">
+                                <span class="i-del"></span>
+                            </span>
+                        </li>
+                    <%}%>
+                    <li class="cart-list-oitem mt10">
+                        商品总金额：<span class="clr-d94 total_price">￥<%=sum%></span>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)" class="goto-settlement mt10">去结算</a>
+                    </li>
+                    <li>
+                        <a href="<%=WapSiteUrl%>/tmpl/product_list.html?gc_id=0" class="goto-shopping mt10">去逛逛</a>
+                    </li>
+                </ul>
+            <%}else{%>
+                <div class="no-record m10">
+                    暂无记录
+                </div>
+            <%}%>
+            </script>
+        </div>
+    </div>
+    <div id="footer"></div>
+    <!-- bottom nav str 33 hao-v3 by 33 hao.com Qq 12449 8640-->
+    <div id="bottom">
+		<div class="footer" style=" height:40px;">
+  <div id="nav-tab" style="bottom:-40px;">
+            <div id="nav-tab-btn"><i class="fa fa-chevron-down"></i></div>
+            <div class="clearfix tab-line nav">
+      <div class="tab-line-item" style="width:22%;" ><a href="../"><i class="fa fa-home"></i><br>
+        首页</a></div>
+      <div class="tab-line-item" style="width:22%;" ><a href="product_first_categroy.html"><i class="fa fa-th-list"></i><br>
+        分类</a></div>
+      <div class="tab-line-item get_down" style="width:12%;line-height:40px;padding-top:5px;" ><i style="font-size:30px;" class="fa fa-chevron-circle-down"></i><br>
+              </div>
+      <div class="tab-line-item" style="width:22%;position: relative;" >
+                <a href="cart_list.html"><i class="fa fa-shopping-cart"></i><br>
+        购物车</a></div>
+      <div class="tab-line-item" style="width:22%;" ><a href="member/member.html?act=member"><i class="fa fa-user"></i><br>
+        个人中心</a></div>
+    </div>
+          </div>
+</div>
+		<div style="z-index: 10000; border-radius: 3px; position: fixed; background: none repeat scroll 0% 0% rgb(255, 255, 255); display: none;" id="myAlert" class="modal hide fade">
+  <div style="text-align: center;padding: 15px 0 0;" class="title"></div>
+  <div style="min-height: 40px;padding: 15px;" class="modal-body"></div>
+  <div style="padding:3px;height: 35px;line-height: 35px;" class="alert-footer"><a style="padding-top: 4px;border-top: 1px solid #ddd;display: block;float: left;width: 50%;text-align: center;border-right: 1px solid #ddd;margin-right: -1px;" class="confirm" href="javascript:;">Save changes</a><a aria-hidden="true" data-dismiss="modal" class="cancel" style="padding-top: 4px;border-top: 1px solid #ddd;display: block;float: left;width: 50%;text-align: center;" href="javascript:;">关闭</a></div>
+</div>
+		<div style="display:none;" class="tips"><i class="fa fa-info-circle fa-lg"></i><span style="margin-left:5px" class="tips_text"></span></div>
+		<div class="bgbg" id="bgbg" style="display: none;"></div>
+        </div>
+      <!-- bottom nav end 33 hao-v3 by 33 hao.com Qq 12449 8640-->
+	<script type="text/javascript" src="../js/jquery.min.js"></script>	  
+    <script type="text/javascript" src="../js/template.js"></script>
+    <script type="text/javascript" src="../js/common.js"></script>
+    <script type="text/javascript" src="../js/simple-plugin.js"></script>
+    <script type="text/javascript" src="../js/tmpl/common-top.js"></script>
+    <script type="text/javascript" src="../js/tmpl/footer.js"></script>
+    <script type="text/javascript" src="../js/tmpl/cart-list.js"></script>
+</body>
+</html>

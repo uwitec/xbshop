@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>店铺详情</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="format-detection" content="telephone=no">
+	<link rel="stylesheet" type="text/css" href="../css/reset.css">
+    <link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="../css/main.css">
+	<link rel="stylesheet" type="text/css" href="../css/index.css">
+	<link rel="stylesheet" type="text/css" href="../css/child.css">
+</head>
+<body>
+	<div class="search">
+		<div class="header-wrap">
+			<div class="htsearch-wrap">
+				<input type="text" class="htsearch-input clr-999" value="" id="keyword" placeholder="搜索全站商品"/>
+				<a href="javascript:void(0);" class="search-btn"></a>
+			</div>
+		</div>
+	</div>
+	<div class="store_header"></div>
+	<div id="product_detail_wp"></div>
+	<div class="content">
+		<div class="product-filter">
+			<a href="javascript:void(0);" class="clearfix current keyorder" key="4">
+				<span class="pf-newpd-icon f-icon fleft"></span>
+				<span class="pf-title">新品</span>
+			</a>
+			<a href="javascript:;" class="clearfix keyorder" key='3'>
+				<span class="pf-price-icon  desc f-icon fleft"></span>
+				<span class="pf-title">价格</span>
+			</a>
+			<a href="javascript:;" class="clearfix keyorder" key='1'>
+				<span class="pf-sales-icon f-icon fleft"></span>
+				<span class="pf-title">销量</span>
+			</a>
+			<a href="javascript:;" class="clearfix keyorder" key='2'>
+				<span class="pf-popularity-icon f-icon fleft"></span>
+				<span class="pf-title">人气</span>
+			</a>
+		</div>
+		<div class="product-cnt">
+			<div id="product_list"></div>
+			<div class="pagination mt10">
+				<a href="javascript:void(0);" class="pre-page disabled">上一页</a>
+				<select name="page_list" style="padding: 7px 4px;  vertical-align: top;">
+					
+				</select>
+				<a href="javascript:void(0);" class="next-page ">下一页</a>
+			</div>
+		</div>
+	</div>
+	<input type="hidden" name="key" value="4">
+	<input type="hidden" name="order" value="1">
+	<input type="hidden" name="page" value="10">
+	<input type="hidden" name="curpage" value="1">
+	<input type="hidden" name="hasmore">
+	<input type="hidden" name="store_id" value="">
+	<input type="hidden" name="keyword">
+	<footer id="footer"></footer>
+	</div>
+	<script type="text/html" id="go_store">
+		<div class="m_store_bg"></div>
+		<div class="ncs-info">
+		<div class="title">
+			<h4><%=store_info.store_name%></h4>
+		</div>
+		<div class="scontent">
+		    <dl class="all-rate">
+		      <dt>综合评分：</dt>
+		      <dd>
+		        <div class="rating"><span style="width: <%=store_info.store_credit_percent%>%"></span></div>
+		        <em><%=store_info.store_credit_average%></em>分</dd>
+		    </dl>
+		    <dl class="messenger">
+		      <dt>联系方式：</dt>
+		      <dd><span member_id="<%=store_info.member_id%>"></span>
+		        <% if(store_info.store_qq != null ){%>
+		        <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=<%=store_info.store_qq%>&site=qq&menu=yes" title="QQ: <%=store_info.store_qq%>"><img border="0" src="http://wpa.qq.com/pa?p=2:<%=store_info.store_qq%>:52" style=" vertical-align: middle;"/></a>
+		        <% }%>
+		        <% if(store_info.store_ww != null ){%>
+		        <a target="_blank" href="http://amos.im.alisoft.com/msg.aw?v=2&amp;uid=<%=store_info.store_ww%>&site=cntaobao&s=1&charset=utf-8" ><img border="0" src="http://amos.im.alisoft.com/online.aw?v=2&uid=<%=store_info.store_ww%>&site=cntaobao&s=2&charset=utf-8" alt="点击这里给我发消息" style=" vertical-align: middle;"/></a>
+		        <% }%>
+		      </dd>
+		    </dl>
+		    <?php } ?>
+		    <dl class="no-border">
+		      <dt>公司名称：</dt>
+		      <dd><%=store_info.store_company_name%></dd>
+		    </dl>
+		    <dl>
+		      <dt>所 在 地：</dt>
+		      <dd><%=store_info.area_info%></dd>
+		    </dl>
+		    </div>
+		</div>
+	</script>
+<script type="text/html" id="home_body">
+	<% if(goods_list.length >0){%>	
+		<ul class="product-list">
+			<%for(i=0;i<goods_list.length;i++){%>
+			<li class="pdlist-item" goods_id="<%=goods_list[i].goods_id;%>">
+				<a href="product_detail.html?goods_id=<%=goods_list[i].goods_id;%>" class="pdlist-item-wrap clearfix">
+					<span class="pdlist-iw-imgwp">
+						<img src="<%=goods_list[i].goods_image_url;%>"/>
+					</span>
+					<div class="pdlist-iw-cnt">
+						<p class="pdlist-iwc-pdname">
+							<%=goods_list[i].goods_name;%>
+						</p>
+						<p class="pdlist-iwc-pdprice">
+							￥<%=goods_list[i].goods_price;%>
+							<%
+								if(goods_list[i].group_flag){
+							%>
+								<span class="product-status bg-yf8">团</span>
+							<%
+								}
+								if(goods_list[i].xianshi_flag){
+							%>
+								<span class="product-status bg-blue">降</span>
+							<%
+								}
+							%>
+						</p>
+						<p class="pdlist-iwc-pdcomment  clearfix">
+							<span class="evaluation_good_swp mr5 fleft">
+							<%
+								for(var s = 0;s<goods_list[i].evaluation_good_star;s++){
+							%>
+								<span class="evaluation_good_star fleft"></span>
+							<%
+								}
+							%>
+							</span>
+							<span class="fleft">
+								(<%=goods_list[i].evaluation_count;%>人)
+							</span>
+						</p>
+					</div>
+				</a>
+			</li>
+			<%}%>
+		</ul>
+	<%
+	   }else {
+	%>
+		<div class="no-record">
+            暂无记录
+        </div>
+	<%
+	   }
+	%>
+</script>
+<!-- bottom nav str 33 hao-v3 by 33 hao.com Qq 12449 8640-->
+    <div id="bottom">
+		<div class="footer" style=" height:40px;">
+  <div id="nav-tab" style="bottom:-40px;">
+            <div id="nav-tab-btn"><i class="fa fa-chevron-down"></i></div>
+            <div class="clearfix tab-line nav">
+      <div class="tab-line-item" style="width:22%;" ><a href="../"><i class="fa fa-home"></i><br>
+        首页</a></div>
+      <div class="tab-line-item" style="width:22%;" ><a href="product_first_categroy.html"><i class="fa fa-th-list"></i><br>
+        分类</a></div>
+      <div class="tab-line-item get_down" style="width:12%;line-height:40px;padding-top:5px;" ><i style="font-size:30px;" class="fa fa-chevron-circle-down"></i><br>
+              </div>
+      <div class="tab-line-item" style="width:22%;position: relative;" >
+                <a href="cart_list.html"><i class="fa fa-shopping-cart"></i><br>
+        购物车</a></div>
+      <div class="tab-line-item" style="width:22%;" ><a href="member/member.html?act=member"><i class="fa fa-user"></i><br>
+        个人中心</a></div>
+    </div>
+          </div>
+</div>
+		<div style="z-index: 10000; border-radius: 3px; position: fixed; background: none repeat scroll 0% 0% rgb(255, 255, 255); display: none;" id="myAlert" class="modal hide fade">
+  <div style="text-align: center;padding: 15px 0 0;" class="title"></div>
+  <div style="min-height: 40px;padding: 15px;" class="modal-body"></div>
+  <div style="padding:3px;height: 35px;line-height: 35px;" class="alert-footer"><a style="padding-top: 4px;border-top: 1px solid #ddd;display: block;float: left;width: 50%;text-align: center;border-right: 1px solid #ddd;margin-right: -1px;" class="confirm" href="javascript:;">Save changes</a><a aria-hidden="true" data-dismiss="modal" class="cancel" style="padding-top: 4px;border-top: 1px solid #ddd;display: block;float: left;width: 50%;text-align: center;" href="javascript:;">关闭</a></div>
+</div>
+		<div style="display:none;" class="tips"><i class="fa fa-info-circle fa-lg"></i><span style="margin-left:5px" class="tips_text"></span></div>
+		<div class="bgbg" id="bgbg" style="display: none;"></div>
+        </div>
+      <!-- bottom nav end 33 hao-v3 by 33 hao.com Qq 12449 8640-->   
+	<script type="text/javascript" src="../js/jquery.min.js"></script>
+	<script type="text/javascript" src="../js/zepto.min.js"></script>
+	<script type="text/javascript" src="../js/config.js"></script>
+	<script type="text/javascript" src="../js/template.js"></script>
+	<script type="text/javascript" src="../js/swipe.js"></script>
+	<script type="text/javascript" src="../js/common.js"></script>
+	<script type="text/javascript" src="../js/simple-plugin.js"></script>
+	<script type="text/javascript" src="../js/tmpl/common-top.js"></script>
+	<script type="text/javascript" src="../js/tmpl/footer.js"></script>
+	<script type="text/javascript" src="../js/tmpl/go_store.js"></script>
+</body>
+</html>
