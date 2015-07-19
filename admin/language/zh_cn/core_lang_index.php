@@ -9,7 +9,7 @@ $lang['please_check_your_url_arg'] = '请检查您URL地址栏输入的参数信
 $lang['error_info'] = '错误信息';
 $lang['solution'] = '解决方案';
 $lang['please_login_in'] = '请登录';
-$lang['shopnc_bbs'] = '官方论坛';
+$lang['xbshop_bbs'] = '官方论坛';
 $lang['found_answer'] = '，将您发现的问题告诉我们，并寻求帮助！';
 $lang['company_name'] = '天津市网城天创科技有限责任公司';
 

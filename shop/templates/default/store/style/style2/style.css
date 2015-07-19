@@ -24,7 +24,7 @@ a:hover { color: #600;}
 #nav li.normal a:hover span { color: #FFF;}
 #nav li.active a span, #nav li.active a:hover span { color: #FFF; }
 
-/* (nc-s-c-s) full name -> ShopNC Store Container Style */
+/* (nc-s-c-s) full name ->  Store Container Style */
 .ncs-sidebar-container {}
 .ncs-sidebar-container .title { background: url(images/sidebar_bg.png) no-repeat scroll 0% 0%; height: 54px; border: none 0;}
 .ncs-sidebar-container .title h4 { font-size: 14px; color:#000; line-height: 22px; margin: 16px 0 16px 38px; display: inline-block; text-shadow: 1px 1px 0 rgba(255,255,255,1);}

@@ -37,7 +37,7 @@ class dashboardControl extends SystemControl{
 		$statistics['shop_version'] = $version;
 		$statistics['setup_date'] = substr($setup_date,0,10);
 
-        // 33hao c extension
+        //  c extension
         try {
             $r = new ReflectionExtension('shopnc');
             $statistics['php_version'] .= ' / ' . $r->getVersion();

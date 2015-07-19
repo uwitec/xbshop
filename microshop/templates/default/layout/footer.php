@@ -15,7 +15,7 @@
     <?php }?>
     <?php }?>
     <?php }?>
-  </p><?php echo $GLOBALS['setting_config']['shopnc_version'];?>
+  </p><?php echo $GLOBALS['setting_config']['xbshop_version'];?>
   <?php echo $GLOBALS['setting_config']['icp_number']; ?><br />
   <?php echo html_entity_decode($GLOBALS['setting_config']['statistics_code'],ENT_QUOTES); ?> </div>
 <?php if (C('debug') == 1){?>

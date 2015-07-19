@@ -10,7 +10,7 @@ a { color: #660000; }
 a:hover { color: #CC3366; text-decoration: none;}
 
 
-/* (nc-s-c-s) full name -> ShopNC Store Container Style */
+/* (nc-s-c-s) full name ->  Store Container Style */
 .ncs-sidebar-container {}
 .ncs-sidebar-container .title { height: 36px; border: solid 1px; border-color: #FFF #FFF #E2DED0 #FFF; border-radius: 5px 5px 0 0;filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#F7F3F0', endColorstr='#FFFFFF'); background-image: -webkit-gradient( linear, left top, left bottom, from(#F7F3F0), to(#FFFFFF)) ; background-image: -moz-linear-gradient(top, #F7F3F0, #FFFFFF);}
 .ncs-sidebar-container .title h4 { color:#333; line-height: 24px; margin: 4px 0 4px 16px; text-shadow: 0 1px 1px rgba(0,0,0,.2); }

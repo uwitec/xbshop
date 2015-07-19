@@ -14,7 +14,7 @@
     <?php }?>
     <?php }?>
     <?php }?>
-  </p><?php echo $output['setting_config']['shopnc_version'];?>
+  </p><?php echo $output['setting_config']['xbshop_version'];?>
   <?php echo $output['setting_config']['icp_number']; ?><br />
   <?php echo html_entity_decode($output['setting_config']['statistics_code'],ENT_QUOTES); ?> </div>
 <?php if (C('debug') == 1){?>

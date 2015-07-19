@@ -10,7 +10,7 @@
 <div class="page">
   <div class="fixed-bar">
     <div class="item-title">
-      <h3><?php echo $lang['nc_shopnc_message'];?></h3>
+      <h3><?php echo $lang['nc_xbshop_message'];?></h3>
     </div>
   </div>
   <div class="fixed-empty"></div>

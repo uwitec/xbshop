@@ -61,7 +61,7 @@ final class Base{
 		$nc_config['db']['master'] = $nc_config['db'][1];
 		$setting_config = $nc_config;
 		$setting = ($setting = rkcache('setting')) ? $setting : rkcache('setting',true);
-		$setting['shopnc_version'] = 'Copyright 2015 <a href="http://" target="_blank"></a> All rights reserved.<br /> </a>';
+		$setting['xbshop_version'] = 'Copyright 2015 <a href="http://" target="_blank"></a> All rights reserved.<br /> </a>';
 		$setting_config = array_merge_recursive($setting,$nc_config);
 	}
 

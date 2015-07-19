@@ -106,10 +106,10 @@ a{text-decoration: none;}
 .evaluation-star-gray {width: 28px;height: 28px;background:url(../images/star_metro_orang2.png) no-repeat;}
 
 /*footer*/
-.footer-top{position:relative;background:#B9B9B9;height: 44px;padding: 0 55px;margin: 10px 0px;}
+.footer-top{position:relative;background:#0d7054;height: 44px;padding: 0 55px;margin: 10px 0px;}
 .footer-tleft,.gotop{position: absolute;}
 .footer-tleft{left: 5px;top: 6px;}
-.gotop{background-color: #A1A1A1;right: 0px;height:44px;top: 0px;width: 50px;display: inline-block;text-align: center;}
+.gotop{background-color: #085e47;right: 0px;height:44px;top: 0px;width: 50px;display: inline-block;text-align: center;}
 .gotop-icon{width: 15px;height: 15px;background-position: -86px -211px;margin-top:6px;}
 .gotop p{color: #fff;font-size: 12px;margin: 0px;padding: 0px;line-height: 16px;}
 .footer-content p{text-align: center;color: #6d6d6d;line-height: 22px;font-size: 12px; }

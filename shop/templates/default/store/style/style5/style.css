@@ -9,7 +9,7 @@ body { background: #F7F7F7 url(images/body_bg.png) scroll repeat-y 50% 0;}
 a { color: #333; }
 a:hover { text-decoration: none; color: #0085CF;}
 
-/* (nc-s-c-s) full name -> ShopNC Store Container Style */
+/* (nc-s-c-s) full name ->  Store Container Style */
 .ncs-sidebar-container {}
 .ncs-sidebar-container .title { background-color: transparent; height: 30px; padding: 0; border: none 0; border-bottom: solid 1px #E7E7E7; }
 .ncs-sidebar-container .title h4 { font-family: "microsoft yahei"; font-size: 14px; color:#000; line-height: 14px; margin: 4px 0 12px 0; display: inline-block;  border-left: solid 3px #CCC; padding-left: 7px;}

@@ -85,7 +85,7 @@ final class Email{
 			return false;
 		}
 
-		fputs($fp, 'EHLO'." shopnc\r\n");
+		fputs($fp, 'EHLO'." \r\n");
 		$lastmessage = fgets($fp, 512);
 		if(substr($lastmessage, 0, 3) != 220 && substr($lastmessage, 0, 3) != 250) {
 			$this->resultLog($this->email_server.':'.$this->email_port." HELO/EHLO - $lastmessage");
