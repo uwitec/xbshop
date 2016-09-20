@@ -75,6 +75,7 @@ $(function(){
 		var username = $('#username').val();
 		var pwd = $('#userpwd').val();
 		var client = 'wap';
+
 		if($.sValid()){
 	          $.ajax({
 				type:'post',
